@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: student-event-registration
-          image: YOUR_DOCKERHUB_USERNAME/student-event-registration:v1
+          image: pavansaladi/pipeevent:v1
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
 ---
