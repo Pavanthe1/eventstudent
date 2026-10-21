@@ -7,71 +7,82 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 650px;
-            margin: 30px auto;
-            padding: 20px;
-            background: #f0f4f8;
+            background: #eef2f7;
+            margin: 0;
+            padding: 30px;
         }
-        h1 { color: #193b70; }
-        form {
+        .container {
+            max-width: 500px;
+            margin: auto;
             background: white;
-            padding: 24px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #0002;
         }
-        label { display: block; margin-top: 14px; }
-        input, select, button {
+        h1 { color: #174ea6; text-align: center; }
+        p { text-align: center; color: #555; }
+        label { display: block; margin-top: 12px; font-weight: bold; }
+        input, select {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
             box-sizing: border-box;
         }
         button {
+            width: 100%;
             margin-top: 20px;
-            background: #1769d2;
+            padding: 12px;
+            border: 0;
+            border-radius: 6px;
+            background: #174ea6;
             color: white;
-            border: none;
+            font-size: 16px;
             cursor: pointer;
         }
+        button:hover { background: #0d3475; }
+        #message { color: green; font-weight: bold; }
     </style>
 </head>
 <body>
-    <h1>Student Event Registration</h1>
-    <h2>TechConnect 2026</h2>
-    <p>Join our campus event for technology talks and student projects.</p>
+    <div class="container">
+        <h1>TechFest 2026</h1>
+        <p>Register for our annual student technology event!</p>
 
-    <form id="registrationForm">
-        <label for="name">Student Name</label>
-        <input id="name" required>
+        <form id="registrationForm">
+            <label>Student Name</label>
+            <input type="text" required placeholder="Enter your full name">
 
-        <label for="regno">Register Number</label>
-        <input id="regno" required>
+            <label>Register Number</label>
+            <input type="text" required placeholder="Enter register number">
 
-        <label for="department">Department</label>
-        <select id="department" required>
-            <option value="">Select Department</option>
-            <option>Computer Science</option>
-            <option>Information Technology</option>
-            <option>Software Engineering</option>
-            <option>Other</option>
-        </select>
+            <label>Department</label>
+            <select required>
+                <option value="">Select Department</option>
+                <option>Software Engineering</option>
+                <option>Computer Science</option>
+                <option>Information Technology</option>
+                <option>Electronics and Communication</option>
+                <option>Electrical Engineering</option>
+                <option>Mechanical Engineering</option>
+            </select>
 
-        <label for="email">Email</label>
-        <input id="email" type="email" required>
+            <label>Email</label>
+            <input type="email" required placeholder="Enter your email">
 
-        <label for="eventDate">Event Date</label>
-        <input id="eventDate" type="date" value="2026-11-21" required>
+            <label>Event Date</label>
+            <input type="date" required>
 
-        <button type="submit">Register Now</button>
-        <p id="message"></p>
-    </form>
+            <button type="submit">Register Now</button>
+            <p id="message"></p>
+        </form>
+    </div>
 
     <script>
-        document.getElementById("registrationForm")
-            .addEventListener("submit", function(event) {
-                event.preventDefault();
-                document.getElementById("message").textContent =
-                    "Registration form validated successfully!";
-            });
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("message").textContent =
+                "Registration submitted successfully!";
+        });
     </script>
 </body>
 </html>
